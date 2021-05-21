@@ -18,8 +18,8 @@ export default function LoginPage() {
         <h1>Alpakat2's virtuelle Kekse</h1>
         <h2></h2>
         <div className="row">
-            <input placeholder="Name der Kekskiste" value={newPass} onChange={(e)=>{setNewPass(e.target.value)}} type="password" id="" />
-            <div className="button" onClick={() => { setPass(newPass); history.push("/cookie") }}>Gib mir Kekse!</div>
+            <input placeholder="Name der Keksdose" value={newPass} onChange={(e)=>{setNewPass(e.target.value)}} type="password" id="" />
+            <button type="submit" onClick={() => { setPass(newPass); history.push("/cookie") }}>Gib mir Kekse!</button>
         </div>
     </motion.div>
 }

@@ -112,19 +112,19 @@ export default function LoginPage() {
 
     return <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="page">
         <AnimatePresence exitBeforeEnter initial={true}>
-            {currentState === 0 && <motion.div transition={{ duration: .25 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key="0"><h1>Wumpus schaut nach Keksen.</h1></motion.div>}
-            {currentState === 1 && <motion.div transition={{ duration: .25 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key="1"><h1>Wumpus kommt nicht in die Keksfabrik. (aka keine Verbindungs zum Server)</h1></motion.div>}
-            {currentState === 2 && <motion.div transition={{ duration: .25 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key="2"><h1>Eine leere Keksschachtel bleibt zurück... Wumpus ist traurig.</h1></motion.div>}
+            {currentState === 0 && <motion.div transition={{ duration: .25 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key="0"><h1>Wumpus schaut nach Keksen...</h1></motion.div>}
+            {currentState === 1 && <motion.div transition={{ duration: .25 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key="1"><h1>Wumpus kommt nicht in die Keksfabrik.</h1><h3 className="muted">keine Verbindung zum Server</h3></motion.div>}
+            {currentState === 2 && <motion.div transition={{ duration: .25 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key="2"><h1>Eine leere Keksdose bleibt zurück... Wumpus ist traurig.</h1></motion.div>}
             {currentState === 3 && <motion.div transition={{ duration: .25 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key="3">
-                <h1>Alpakat2 hat dir {data} Keks(e) geschenkt. Hier /ist er/sind sie:</h1>
-                <div className="row">
+                <h1>Alpakat2 hat dir {data} {data == 1 && "Keks"}{data !=1 && "Kekse"} geschenkt. Hier {data == 1 && "ist er"}{data !=1 && "sind sie"}</h1>
+                <div className="kekses">
                     <AnimatePresence>
                         {keekse}
                     </AnimatePresence>
                 </div>
                 <div className="button" onClick={eatCokie}>Essen</div>
             </motion.div>}
-            {currentState === 4 && <motion.div transition={{ duration: .25 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key="4"><h1>Wumpus hat keine Keksschachtel "{pass}" gefunden. ;(</h1></motion.div>}
+            {currentState === 4 && <motion.div transition={{ duration: .25 }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} key="4"><h1>Wumpus hat keine Keksdose <i>{pass}</i> gefunden. ;(</h1></motion.div>}
         </AnimatePresence>
     </motion.div>
 }
